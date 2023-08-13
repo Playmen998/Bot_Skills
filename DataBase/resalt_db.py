@@ -55,4 +55,4 @@ order by data desc
 limit 1)""")
     base.commit()
     await bot.send_message(message.from_user.id,
-                           text=f"""Вы удалили последнюю запись №{ret[0][0]}\nЗадание: {ret[0][1]}""")
+                           text=f"""Вы удалили последнюю запись №{ret[0][0]}\nЗадание: {ret[0][1]}\n\nЧтобы вернуться в главное меню нажмите: /start""")

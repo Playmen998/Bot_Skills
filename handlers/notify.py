@@ -108,6 +108,7 @@ async def answer_notify_every_two_minute(callback : types.CallbackQuery, TEXT_AN
 async def callback_notify_finish(callback : types.CallbackQuery):
     "Отменяет все планировщики"
     await callback.answer()
+    await SELECT_PERIOD.delete()
     try:
         scheduler.add_job(delete_job('every_day'), 'interval', seconds=1)
     except:
